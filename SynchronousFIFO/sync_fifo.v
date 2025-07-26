@@ -16,12 +16,13 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
   reg [DATA_WIDTH-1:0] fifo[0:FIFO_WIDTH-1];
   reg [PTR_WIDTH+1:0] count;
   integer i;
+  
   assign full=(count==FIFO_WIDTH);
   assign empty=(count==0);
   
   always @(posedge clk)
     begin
-      if(!rst_n)
+      if(!rst_n) // if reset, all values goes to 0
         begin
           for (i = 0; i <=FIFO_WIDTH-1 ; i = i + 1)
             fifo[i] <= 0;
@@ -32,31 +33,31 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
         end
       else
         begin
-          if(w_en==1 && r_en==0)
+          if(w_en==1 && r_en==0) // if only writes
             begin
-              if(full==0)
+              if(full==0) // if not full
                 begin
                   fifo[w_ptr]<=data_in;
                   count<=count+1;
                   w_ptr<=(w_ptr==FIFO_WIDTH-1)?0:w_ptr+1;
                   r_ptr<=r_ptr;
                 end
-               else;
+               else;// if full
             end
-          else if(w_en==0 && r_en==1)
+          else if(w_en==0 && r_en==1) //if only read
             begin
-              if(empty==0)
+              if(empty==0) //if not empty
                 begin
                   data_out<=fifo[r_ptr];
                   count<=count-1;
                   w_ptr<=w_ptr;
                   r_ptr<=(r_ptr==FIFO_WIDTH-1)?0:r_ptr+1;
                 end
-              else;
+              else; //if empty
             end
-          else if(w_en==1 && r_en==1)
+          else if(w_en==1 && r_en==1) //if both write, read
             begin
-              if(!empty && !full)
+              if(!empty && !full) //if not empty or full
                 begin
                  fifo[w_ptr]<=data_in;
                  data_out<=fifo[r_ptr];
@@ -64,7 +65,7 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
                  w_ptr<=(w_ptr==FIFO_WIDTH-1)?0:w_ptr+1;
                  r_ptr<=(r_ptr==FIFO_WIDTH-1)?0:r_ptr+1;
                 end
-              else if(empty && !full)
+              else if(empty && !full) //if empty
                 begin
                   fifo[w_ptr]<=data_in;
                   data_out<=data_out;
@@ -72,7 +73,7 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
                   w_ptr<=(w_ptr==FIFO_WIDTH-1)?0:w_ptr+1;
                   r_ptr<=r_ptr;
                 end
-              else
+              else //if full
                 begin
                   fifo[w_ptr]<=fifo[w_ptr];
                   data_out<=fifo[r_ptr];
