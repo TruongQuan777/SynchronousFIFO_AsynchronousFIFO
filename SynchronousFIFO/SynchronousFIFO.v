@@ -13,9 +13,9 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
   parameter PTR_WIDTH=$clog2(FIFO_WIDTH);
   reg [PTR_WIDTH:0] w_ptr;
   reg [PTR_WIDTH:0] r_ptr;
-  reg [DATA_WIDTH-1:0] fifo[FIFO_WIDTH];
+  reg [DATA_WIDTH-1:0] fifo[0:FIFO_WIDTH-1];
   reg [PTR_WIDTH+1:0] count;
-  
+  integer i;
   assign full=(count==FIFO_WIDTH);
   assign empty=(count==0);
   
@@ -23,7 +23,7 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
     begin
       if(!rst_n)
         begin
-          for (int i = 0; i <=FIFO_WIDTH-1 ; i = i + 1)
+          for (i = 0; i <=FIFO_WIDTH-1 ; i = i + 1)
             fifo[i] <= 0;
           data_out<=0;
           count<=0;
