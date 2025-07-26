@@ -63,4 +63,3 @@ module sync_fifo_TB;
     $dumpfile("dump.vcd"); $dumpvars;
   end
 endmodule
-
