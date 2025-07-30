@@ -7,8 +7,9 @@ Synchronous FIFOs are widely used in applications such as data transfer between 
 <img width="882" height="281" alt="Image" src="https://github.com/user-attachments/assets/3d450132-9cfb-4eaa-a7d2-ba817706e9a4" />
 
 ### Full
-full=(count==FIFO_WIDTH)
+`full = (count == FIFO_WIDTH)`
 ### Empty
+`empty = (count == 0)`
 ## Simulation
 The docs folder include 2 testbenches and 2 corresponding simulation waveform. The first testbench will perform 1 read + 1 write sequentially so the full and empty condition will never reach:<br>
 ```
