@@ -4,9 +4,41 @@ This repo contain the verilog code for a synchronous FIFO along with the testben
 This project implements a synchronous First-In First-Out (FIFO) buffer using Verilog. The primary purpose of a FIFO is to temporarily store data while maintaining the order of arrival, making it a critical component in digital systems where data needs to be buffered between modules operating at the same clock domain.
 Synchronous FIFOs are widely used in applications such as data transfer between producer-consumer pairs, communication interfaces, and pipelined architectures. This repository include the RTL code, the SystemVerilog testbench along with the constraint file and the timing reports.
 ## Operation
-The docs folder include 2 testbenches and 2 corresponding simulation waveform.
-The first testbench will perform 1 read + 1 write sequentially so the full and empty condition will never reach.
-The second testbench will try to provoke the full and empty condition.
+## Simulation
+The docs folder include 2 testbenches and 2 corresponding simulation waveform. The first testbench will perform 1 read + 1 write sequentially so the full and empty condition will never reach:<br>
+```
+Time = 206000: Comparison Passed: wr_data = 13 and rd_data = 13
+Time = 226000: Comparison Passed: wr_data = 70 and rd_data = 70
+Time = 246000: Comparison Passed: wr_data = fd and rd_data = fd
+Time = 266000: Comparison Passed: wr_data = e2 and rd_data = e2
+Time = 286000: Comparison Passed: wr_data = 97 and rd_data = 97
+Time = 306000: Comparison Passed: wr_data = f1 and rd_data = f1
+Time = 326000: Comparison Passed: wr_data = c5 and rd_data = c5
+Time = 346000: Comparison Passed: wr_data = ec and rd_data = ec
+Time = 366000: Comparison Passed: wr_data = 48 and rd_data = 48
+Time = 386000: Comparison Passed: wr_data = 0c and rd_data = 0c
+Time = 406000: Comparison Passed: wr_data = 2c and rd_data = 2c
+Time = 426000: Comparison Passed: wr_data = 6b and rd_data = 6b
+Time = 446000: Comparison Passed: wr_data = 1b and rd_data = 1b
+Time = 466000: Comparison Passed: wr_data = 45 and rd_data = 45
+Time = 486000: Comparison Passed: wr_data = f4 and rd_data = f4
+Time = 546000: Comparison Passed: wr_data = 6c and rd_data = 6c
+Time = 566000: Comparison Passed: wr_data = 67 and rd_data = 67
+Time = 586000: Comparison Passed: wr_data = 8c and rd_data = 8c
+Time = 606000: Comparison Passed: wr_data = 4a and rd_data = 4a
+Time = 626000: Comparison Passed: wr_data = a6 and rd_data = a6
+Time = 646000: Comparison Passed: wr_data = a3 and rd_data = a3
+Time = 666000: Comparison Passed: wr_data = 9d and rd_data = 9d
+Time = 686000: Comparison Passed: wr_data = 7c and rd_data = 7c
+Time = 706000: Comparison Passed: wr_data = b8 and rd_data = b8
+Time = 726000: Comparison Passed: wr_data = eb and rd_data = eb
+Time = 746000: Comparison Passed: wr_data = 5b and rd_data = 5b
+Time = 766000: Comparison Passed: wr_data = f3 and rd_data = f3
+Time = 786000: Comparison Passed: wr_data = 4d and rd_data = 4d
+Time = 806000: Comparison Passed: wr_data = 5c and rd_data = 5c
+Time = 826000: Comparison Passed: wr_data = f6 and rd_data = f6
+```
+The second testbench will try to provoke the full and empty condition:
 ```
 Push In: w_en=1, r_en=0, data_in=24
 Push In: w_en=1, r_en=0, data_in=81
@@ -49,7 +81,6 @@ Pop Out: w_en=0, r_en=1, data_out=aa
 FIFO Empty!! Can not pop data_out
 FIFO Empty!! Can not pop data_out
 ```
-## Simulation
 
 ## Constraint + Timing report
 ## References
