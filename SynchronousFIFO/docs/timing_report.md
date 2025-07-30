@@ -15,7 +15,8 @@ The worst hold slack in our design appear at the path from data_in[2] to fifo_re
 We randomly choose a report on the input ports "data_in[2]" and analyze it setup and hold path.
 ## a/ Setup slack
 <img width="999" height="700" alt="Image" src="https://github.com/user-attachments/assets/9f4b10de-8e84-463d-b054-6ae38b37d567" />
-<img width="1001" height="390" alt="Image" src="https://github.com/user-attachments/assets/43b0d516-96be-4053-8cf9-5216a8d90aed" /><br>
+<img width="1001" height="390" alt="Image" src="https://github.com/user-attachments/assets/43b0d516-96be-4053-8cf9-5216a8d90aed" />
+
 ## b/ Hold slack
 <img width="1258" height="659" alt="Image" src="https://github.com/user-attachments/assets/f9aae4ae-d2fc-4f49-bfa2-554ca00f5b1e" />
 <img width="1050" height="394" alt="Image" src="https://github.com/user-attachments/assets/1f9b649d-e1fa-4228-8d6c-9aafa2a1129b" />
