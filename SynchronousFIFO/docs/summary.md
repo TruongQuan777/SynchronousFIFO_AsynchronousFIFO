@@ -7,7 +7,8 @@ Synchronous FIFOs are widely used in applications such as data transfer between 
 The docs folder include 2 testbenches and 2 corresponding simulation waveform.
 The first testbench will perform 1 read + 1 write sequentially so the full and empty condition will never reach.
 The second testbench will try to provoke the full and empty condition.
-```Push In: w_en=1, r_en=0, data_in=24
+```
+Push In: w_en=1, r_en=0, data_in=24
 Push In: w_en=1, r_en=0, data_in=81
 Push In: w_en=1, r_en=0, data_in=09
 Push In: w_en=1, r_en=0, data_in=63
@@ -46,7 +47,8 @@ Pop Out: w_en=0, r_en=1, data_out=c6
 Pop Out: w_en=0, r_en=1, data_out=c5
 Pop Out: w_en=0, r_en=1, data_out=aa
 FIFO Empty!! Can not pop data_out
-FIFO Empty!! Can not pop data_out```
+FIFO Empty!! Can not pop data_out
+```
 ## Simulation
 
 ## Constraint + Timing report
