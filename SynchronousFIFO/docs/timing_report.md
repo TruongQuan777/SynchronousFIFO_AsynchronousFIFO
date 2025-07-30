@@ -1,12 +1,16 @@
-# Design timing summary
+# I/ Design timing summary
 Show us the worst setup & hold path in the design
 <img width="1057" height="206" alt="Image" src="https://github.com/user-attachments/assets/8eced37d-3db1-4920-8c0d-34be0a5d6b37" />
-## Worst setup slack
+## a/ Worst setup slack
+The worst setup slack in our design appear at the path from w_en to input of fifo_reg[3][3]/D
 <img width="964" height="360" alt="Image" src="https://github.com/user-attachments/assets/1fb7aa85-4f94-4c6a-a55b-baf7be33a140" />
 <img width="1506" height="565" alt="Image" src="https://github.com/user-attachments/assets/568fd0a2-12e2-4835-9bb1-4c87a4c80179" />
 <img width="1205" height="447" alt="Image" src="https://github.com/user-attachments/assets/a6d0f203-18d1-40b5-b2c1-321e39e2390e" />
-## Worst hold slack
-
+## b/ Worst hold slack
+The worst hold slack in our design appear at the path from data_in[2] to fifo_reg[6][2]/D
+<img width="1057" height="206" alt="Image" src="https://github.com/user-attachments/assets/8eced37d-3db1-4920-8c0d-34be0a5d6b37" />
+<img width="1065" height="390" alt="Image" src="https://github.com/user-attachments/assets/b50a1bd8-231e-4dd7-bd63-9739c2982d37" />
+<img width="1025" height="453" alt="Image" src="https://github.com/user-attachments/assets/44dd55a3-d692-40b3-84ef-4dacde03f16e" />
 ## Table of Contents
 1. [Author](#author)
 2. [Introduction](#introduction)
