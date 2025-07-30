@@ -2,6 +2,9 @@
 Show us the worst setup & hold path in the design
 <img width="1057" height="206" alt="Image" src="https://github.com/user-attachments/assets/8eced37d-3db1-4920-8c0d-34be0a5d6b37" />
 ## Worst setup slack
+<img width="964" height="360" alt="Image" src="https://github.com/user-attachments/assets/1fb7aa85-4f94-4c6a-a55b-baf7be33a140" />
+<img width="1506" height="565" alt="Image" src="https://github.com/user-attachments/assets/568fd0a2-12e2-4835-9bb1-4c87a4c80179" />
+<img width="1205" height="447" alt="Image" src="https://github.com/user-attachments/assets/a6d0f203-18d1-40b5-b2c1-321e39e2390e" />
 ## Worst hold slack
 
 ## Table of Contents
