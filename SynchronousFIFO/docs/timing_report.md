@@ -1,6 +1,8 @@
-# Asynchronous FIFO Design
-
-This repo contains verilog code for an asynchronous FIFO.
+# Design timing summary
+Show us the worst setup & hold path in the design
+<img width="1057" height="206" alt="Image" src="https://github.com/user-attachments/assets/8eced37d-3db1-4920-8c0d-34be0a5d6b37" />
+## Worst setup slack
+## Worst hold slack
 
 ## Table of Contents
 1. [Author](#author)
