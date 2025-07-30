@@ -8,7 +8,7 @@ Synchronous FIFOs are widely used in applications such as data transfer between 
 
 ### Write only
 If the FIFO is not full, add data_in to fifo[w_ptr] and increase the w_ptr signal and count signal. w_ptr should warp to 0 if the previous values was FIFO_WIDTH-1:<br>
-```
+```verilog
 fifo[w_ptr]<=data_in;
 count<=count+1;
 w_ptr<=(w_ptr==FIFO_WIDTH-1)?0:w_ptr+1;
@@ -17,7 +17,7 @@ r_ptr<=r_ptr;
 If the FIFO is full, do nothing.<br>
 ### Read only
 If the FIFO is not empty, remove data from fifo[r_ptr] and increase r_ptr signal and decrease the count signal. r_ptr should warp to 0 if the previous values was FIFO_WIDTH-1:<br>
-```
+```verilog
 data_out<=fifo[r_ptr];
 count<=count-1;
 w_ptr<=w_ptr;
@@ -28,7 +28,7 @@ If the FIFO is empty, do nothing.<br>
 If the FIFO is empty, perform write only.<br>
 If the FIFO is full, perform read only.<br>
 If the FIFO is neither, perform both read and write. Add data at fifo[w_ptr] and read output fifo[r_ptr] at data_out while increase r_ptr and w_ptr (including warp_around logic):<br>
-```
+```verilog
 fifo[w_ptr]<=data_in;
 data_out<=fifo[r_ptr];
 count<=count;
