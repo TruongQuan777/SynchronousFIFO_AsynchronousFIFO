@@ -84,7 +84,7 @@ FIFO Empty!! Can not pop data_out
 
 ## Constraint + Timing report
 ## References
-1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/)
-2/ [chipverify website](https://www.chipverify.com/verilog/synchronous-fifo)
+1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/) <br>
+2/ [chipverify website](https://www.chipverify.com/verilog/synchronous-fifo) <br>
 3/ 
 
