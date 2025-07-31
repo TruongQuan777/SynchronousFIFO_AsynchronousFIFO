@@ -124,9 +124,9 @@ FIFO Empty!! Can not pop data_out
 <img width="394" height="263" alt="Image" src="https://github.com/user-attachments/assets/e59d77ee-c82b-43e4-8d80-49408e3f2c39" />
 
 When setting input delay, we must ensure the input_delay_max satisfy the positive slack in the setup timing equation and the input_delay_min satisfy positive slack in the hold timing equation:<br>
-Setup timing equation:
+Setup timing equation:<br>
 <img width="409" height="135" alt="Image" src="https://github.com/user-attachments/assets/52b814fe-3cfd-4bb6-8189-aa25ee4a28d0" />
-Hold timing equation:
+Hold timing equation:<br>
 <img width="409" height="135" alt="Image" src="https://github.com/user-attachments/assets/52b814fe-3cfd-4bb6-8189-aa25ee4a28d0" />
 #### output_delay
 ### Realistic input_delay and output_delay constraint
