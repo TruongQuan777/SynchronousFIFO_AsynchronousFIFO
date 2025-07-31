@@ -161,6 +161,9 @@ Input Delay(min) = Tco(min) + Ddata(min) + Dclock_to_ExtDev(min) - Dclock_to_FPG
 Output Delay(max) = Tsetup + Ddata(max) + Dclock_to_FPGA(max) - Dclock_to_ExtDev(min)
 Output Delay(min) = Ddata(min) - Thold + Dclock_to_FPGA(min) - Dclock_to_ExtDev(max)
 ```
+## Disclaimer
+I'm still a student and this project is based on what I've learned from various online resources. All the explanations and reasoning are my own, so they might not be entirely accurate — take everything here with a grain of salt!
+
 ## References
 1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/) <br>
 2/ [chipverify](https://www.chipverify.com/verilog/synchronous-fifo) <br>
