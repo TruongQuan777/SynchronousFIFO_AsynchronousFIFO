@@ -144,6 +144,23 @@ Hold timing equation:
 <img width="561" height="130" alt="Image" src="https://github.com/user-attachments/assets/23c3a15d-c43e-4343-8d5b-d7c2d7fbc178" />
 
 ### Realistic input_delay and output_delay constraint
+In the section above, we shown how to set constraint without having much information about external structures.
+
+In this section, we show how to calculate the input_delay and output_delay.
+#### input_delay
+<img width="828" height="360" alt="Image" src="https://github.com/user-attachments/assets/29dda146-b532-460f-a402-0a4172d894d6" />
+
+```
+Input Delay(max) = Tco(max) + Ddata(max) + Dclock_to_ExtDev(max) - Dclock_to_FPGA(min)
+Input Delay(min) = Tco(min) + Ddata(min) + Dclock_to_ExtDev(min) - Dclock_to_FPGA(max)
+```
+#### output_delay
+<img width="842" height="374" alt="Image" src="https://github.com/user-attachments/assets/58bacd30-e47c-45d1-89d5-f10bd5fe85f2" />
+
+```
+Output Delay(max) = Tsetup + Ddata(max) + Dclock_to_FPGA(max) - Dclock_to_ExtDev(min)
+Output Delay(min) = Ddata(min) - Thold + Dclock_to_FPGA(min) - Dclock_to_ExtDev(max)
+```
 ## References
 1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/) <br>
 2/ [chipverify website](https://www.chipverify.com/verilog/synchronous-fifo) <br>
