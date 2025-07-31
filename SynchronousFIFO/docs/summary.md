@@ -123,7 +123,7 @@ FIFO Empty!! Can not pop data_out
 #### input_delay
 <img width="394" height="263" alt="Image" src="https://github.com/user-attachments/assets/e59d77ee-c82b-43e4-8d80-49408e3f2c39" />
 
-When setting input delay, we must ensure the input_delay_max satisfy the positive slack in the setup timing equation and the input_delay_min satisfy positive slack in the hold timing equation:<br>
+When setting input delay, we must ensure the input_delay_max satisfy the positive slack in the setup timing equation and the input_delay_min satisfy positive slack in the hold timing equation.<br>
 Setup timing equation:
 
 <img width="409" height="135" alt="Image" src="https://github.com/user-attachments/assets/52b814fe-3cfd-4bb6-8189-aa25ee4a28d0" />
@@ -133,9 +133,19 @@ Hold timing equation:
 <img width="409" height="135" alt="Image" src="https://github.com/user-attachments/assets/52b814fe-3cfd-4bb6-8189-aa25ee4a28d0" />
 
 #### output_delay
+<img width="426" height="213" alt="Image" src="https://github.com/user-attachments/assets/158ed6b9-44b7-4826-8120-441bd937bee9" />
+
+Setup timing equation:
+
+<img width="534" height="139" alt="Image" src="https://github.com/user-attachments/assets/bd66ac4d-4c4e-40aa-9567-e1dee6b3be5e" />
+
+Hold timing equation:
+
+<img width="561" height="130" alt="Image" src="https://github.com/user-attachments/assets/23c3a15d-c43e-4343-8d5b-d7c2d7fbc178" />
+
 ### Realistic input_delay and output_delay constraint
 ## References
 1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/) <br>
 2/ [chipverify website](https://www.chipverify.com/verilog/synchronous-fifo) <br>
-3/ 
+3/ [soc phy
 
