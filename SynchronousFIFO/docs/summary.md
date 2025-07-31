@@ -164,6 +164,6 @@ Output Delay(min) = Ddata(min) - Thold + Dclock_to_FPGA(min) - Dclock_to_ExtDev(
 ## References
 1/ [VLSI verify Blog - Synchronous FIFO](https://vlsiverify.com/verilog/verilog-codes/synchronous-fifo/) <br>
 2/ [chipverify](https://www.chipverify.com/verilog/synchronous-fifo) <br>
-3/ [SoC physical design]
+3/ [SoC physical design]<br>
 4/ [AMD documentation](https://docs.amd.com/r/en-US/ug949-vivado-design-methodology/Constraining-Input-and-Output-Ports)
 
