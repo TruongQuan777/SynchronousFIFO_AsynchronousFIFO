@@ -12,7 +12,7 @@ module sync_fifo #(parameter FIFO_WIDTH=8, DATA_WIDTH=8)(
   parameter PTR_WIDTH=$clog2(FIFO_WIDTH);
   reg [PTR_WIDTH:0] w_ptr;
   reg [PTR_WIDTH:0] r_ptr;
-  reg [DATA_WIDTH:0] fifo[0:FIFO_WIDTH-1];
+  reg [DATA_WIDTH-1:0] fifo[0:FIFO_WIDTH-1];
   integer i;
 
   //Output logic
