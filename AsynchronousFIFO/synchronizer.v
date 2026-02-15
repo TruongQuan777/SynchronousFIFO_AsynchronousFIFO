@@ -1,8 +1,8 @@
 module synchronizer #(parameter FIFO_WIDTH=8, parameter PTR_WIDTH=$clog2(FIFO_WIDTH)) (
-  input clk, rst_n, [FIFO_WIDTH:0] d_in, 
-  output reg [FIFO_WIDTH_WIDTH:0] d_out
+  input clk, rst_n, [PTR_WIDTH:0] d_in, 
+  output reg [PTR_WIDTH:0] d_out
 );
-  reg [FIFO_WIDTH:0] q1;
+  reg [PTR_WIDTH:0] q1;
   always@(posedge clk) 
     begin
       if(!rst_n) 
