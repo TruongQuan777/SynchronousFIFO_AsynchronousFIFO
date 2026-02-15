@@ -1,4 +1,4 @@
-module g2b_converter #(DATA_WIDTH=8, PTR_WIDTH=$clog2(DATA_WIDTH))(
+module g2b_converter #(parameter DATA_WIDTH=8,parameter PTR_WIDTH=$clog2(DATA_WIDTH))(
   input  wire [DATA_WIDTH-1:0] gray_in,
   output reg  [DATA_WIDTH-1:0] binary_out
 );
