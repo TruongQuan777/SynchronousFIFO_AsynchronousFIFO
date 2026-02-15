@@ -1,4 +1,4 @@
-module b2g_converter #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter PTR_WIDTH=$clog2(FIFO_WIDTH))(
+module b2g_converter #(parameter FIFO_WIDTH=8, parameter PTR_WIDTH=$clog2(FIFO_WIDTH))(
     input  wire [PTR_WIDTH:0] binary_in,
     output wire [PTR_WIDTH:0] gray_out
 );
