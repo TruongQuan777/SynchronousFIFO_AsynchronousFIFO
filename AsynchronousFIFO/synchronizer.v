@@ -1,4 +1,4 @@
-module synchronizer #(DATA_WIDTH=8, PTR_WIDTH=$clog2(DATA_WIDTH)) (
+module synchronizer #(parameter DATA_WIDTH=8,parameter PTR_WIDTH=$clog2(DATA_WIDTH)) (
   input clk, rst_n, [DATA-WIDTH:0] d_in, 
   output reg [DATA_WIDTH:0] d_out
 );
