@@ -4,27 +4,21 @@ module rptr_handler #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter 
   output reg [PTR_WIDTH:0] rptr,
   output reg empty
 );
-
-  reg [PTR_WIDTH:0] b_rptr_next;
-  reg [PTR_WIDTH:0] g_rptr_next;
-
-  assign b_rptr_next = b_rptr+(r_en & !empty);
-  assign g_rptr_next = (b_rptr_next >>1)^b_rptr_next;
-  assign rempty = (g_wptr_sync == g_rptr_next);
   
   always@(posedge rclk or negedge rrst_n) begin
-    if(!rrst_n) begin
-      b_rptr <= 0;
-      g_rptr <= 0;
-    end
-    else begin
-      b_rptr <= b_rptr_next;
-      g_rptr <= g_rptr_next;
-    end
+    if(!rrst_n) 
+      begin
+        b_rptr <= 0;
+      end
+    else 
+      begin
+        b_rptr <= b_rptr+(r_en & !empty);;
+      end
   end
   
-  always@(posedge rclk or negedge rrst_n) begin
-    if(!rrst_n) empty <= 1;
-    else        empty <= rempty;
-  end
+  always@(posedge rclk or negedge rrst_n) 
+    begin
+      if(!rrst_n) empty <= 1;
+      else        empty <= b_wptr_sync == b_rptr+(r_en & !empty);
+    end
 endmodule
