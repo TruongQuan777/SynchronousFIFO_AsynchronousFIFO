@@ -5,8 +5,6 @@ module wptr_handler #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter 
   output reg full
 );
 
-   
-  wire full;
   
   always@(posedge wclk or negedge wrst_n) begin
     if(!wrst_n) begin
