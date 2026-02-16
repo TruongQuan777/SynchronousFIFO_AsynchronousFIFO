@@ -16,8 +16,10 @@ module wptr_handler #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter 
       wptr<=wptr+(w_en & !full); // incr binary write pointer
     end
   end
-  
 
-  assign full=(w_ptr[PTR_WIDTH-1:0]==r_ptr_sync[PTR_WIDTH-1:0] && w_ptr[PTR_WIDTH]!=r_ptr_sync[PTR_WIDTH]);
+ always@(posedge wclk or negedge wrst_n) begin
+    if(!wrst_n) full <= 0;
+    else        full <= (w_ptr[PTR_WIDTH-1:0]==r_ptr_sync[PTR_WIDTH-1:0] && w_ptr[PTR_WIDTH]!=r_ptr_sync[PTR_WIDTH]);
+  end
 
 endmodule
