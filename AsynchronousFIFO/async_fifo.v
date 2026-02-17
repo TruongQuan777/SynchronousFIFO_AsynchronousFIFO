@@ -3,7 +3,7 @@
 `include "rptr_handler.v"
 `include "fifo_mem.v"
 
-module asynchronous_fifo #(parameter DEPTH=8, DATA_WIDTH=8) (
+module async_fifo #(parameter DEPTH=8, DATA_WIDTH=8, parameter PTR_WIDTH = $clog2(DEPTH)) (
   input wclk, wrst_n,
   input rclk, rrst_n,
   input w_en, r_en,
@@ -11,8 +11,6 @@ module asynchronous_fifo #(parameter DEPTH=8, DATA_WIDTH=8) (
   output reg [DATA_WIDTH-1:0] data_out,
   output reg full, empty
 );
-  
-  parameter PTR_WIDTH = $clog2(DEPTH);
  
   reg [PTR_WIDTH:0] g_wptr_sync, g_rptr_sync;
   reg [PTR_WIDTH:0] b_wptr, b_rptr;
