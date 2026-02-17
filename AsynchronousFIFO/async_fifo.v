@@ -14,8 +14,8 @@ module async_fifo #(parameter DEPTH=8, DATA_WIDTH=8, parameter PTR_WIDTH = $clog
   reg [PTR_WIDTH:0] b_w_ptr, g_w_ptr, g_w_ptr_sync, b_w_ptr_sync;
   reg [PTR_WIDTH:0] b_r_ptr, g_r_ptr, g_r_ptr_sync, b_r_ptr_sync;
 
-  synchronizer #(PTR_WIDTH) sync_wptr (rclk, rrst_n, g_wptr, g_wptr_sync); //write pointer to read clock domain
-  synchronizer #(PTR_WIDTH) sync_rptr (wclk, wrst_n, g_rptr, g_rptr_sync); //read pointer to write clock domain 
+  synchronizer #(PTR_WIDTH) sync_wptr (r_clk, rrst_n, g_r_ptr, g_r_ptr_sync); //write pointer to read clock domain
+  synchronizer #(PTR_WIDTH) sync_rptr (w_clk, wrst_n, g_w_ptr, g_w_ptr_sync); //read pointer to write clock domain 
   
   wptr_handler #(PTR_WIDTH) wptr_h(w_clk, wrst_n, w_en,b_r_ptr_sync,b_w_ptr,full);
   rptr_handler #(PTR_WIDTH) rptr_h(r_clk, rrst_n, r_en,b_w_ptr_sync,b_r_ptr, empty);
