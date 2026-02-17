@@ -5,12 +5,11 @@ module fifo_mem #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter PTR_
   input r_clk,r_en,empty,
   output data_out
 );
-  reg[DATA_WIDTH-1:0] mem[FIFO_WIDTH-1:0]
-  always@(posedge w_clk) begin
-    if(w_en & !full) begin
-      mem[w_ptr[PTR_WIDTH-1:0]] <= data_in;
+  reg[DATA_WIDTH-1:0] mem[FIFO_WIDTH-1:0];
+  always@(posedge w_clk) 
+    begin
+      if(w_en & !full) mem[w_ptr[PTR_WIDTH-1:0]] <= data_in;
     end
-  end
   /*
   always@(posedge r_clk) begin
     if(r_en & !empty) begin
