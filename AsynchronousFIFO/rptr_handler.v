@@ -11,9 +11,7 @@ module rptr_handler #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter 
         r_ptr <= 0;
       end
     else 
-      begin
-        r_ptr <= r_ptr+(r_en & !empty);;
-      end
+      r_ptr <= r_ptr+(r_en & !empty);
   end
   
   always@(posedge r_clk or negedge rrst_n) 
