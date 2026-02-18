@@ -3,7 +3,7 @@ module fifo_mem #(parameter DATA_WIDTH=8, parameter FIFO_WIDTH=8, parameter PTR_
   input[PTR_WIDTH:0] w_ptr,r_ptr,
   input w_clk,w_en,full,
   input r_clk,r_en,empty,
-  output data_out
+  output[DATA_WIDTH-1:0] data_out
 );
   reg[DATA_WIDTH-1:0] mem[FIFO_WIDTH-1:0];
   always@(posedge w_clk) 
